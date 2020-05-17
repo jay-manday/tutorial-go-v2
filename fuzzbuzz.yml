@@ -1,0 +1,13 @@
+base: ubuntu:16.04
+targets:
+  - name: tutorial
+    language: go
+    version: "1.11"
+    corpus: ./corpus
+    harness:
+      function: FuzzerEntrypoint
+      # package defines where to import FuzzerEntrypoint from
+      package: github.com/jay-manday/tutorial-go-v2
+      # the repository will be cloned to
+      # $GOPATH/src/github.com/fuzzbuzz/tutorial
+      checkout: github.com/jay-manday/tutorial-go-v2
